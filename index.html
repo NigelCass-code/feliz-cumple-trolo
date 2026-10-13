@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <!-- Librería para la animación de confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        /* Estilos generales y fondo */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Tarjeta central */
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            max-width: 450px;
+            width: 90%;
+        }
+
+        /* Título principal */
+        h1 {
+            font-size: 2.5rem;
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+
+        /* Emoji de torta animado */
+        .cake {
+            font-size: 4rem;
+            margin: 15px 0;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Mensaje de felicitación */
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        /* Botón de festejo */
+        .btn-surprise {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+        }
+
+        .btn-surprise:hover {
+            background-color: #c2185b;
+            transform: scale(1.05);
+        }
+
+        /* Animación suave para la torta */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="cake">🎂</div>
+        <h1>¡Feliz Cumpleaños!</h1>
+        <p>¡Que tengas un día increíble lleno de trabas, sonrisas y momentos inolvidables! no te olvides el queso para la pizza 🥳🎉</p>
+        <button class="btn-surprise" onclick="lanzarConfeti()">¡Tocar para festejar! 🎈</button>
+    </div>
+
+    <!-- Script de JavaScript para la animación -->
+    <script>
+        function lanzarConfeti() {
+            // Lanza una ráfaga de confeti usando la librería canvas-confetti
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        // Lanza confeti automáticamente al abrir la página
+        window.onload = () => {
+            setTimeout(lanzarConfeti, 500);
+        };
+    </script>
+
+</body>
+</html>
